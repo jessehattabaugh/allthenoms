@@ -1,5 +1,13 @@
 var express = require("express");
+var harp = require("harp");
 var app = express();
+
+app.configure(function(){
+    app.use(express.static(__dirname + "/public"));
+    app.use(harp.pipeline(__dirname + "/public"));
+});
+
+// routes as normal.
 app.use(express.logger());
 
 app.get('/', function(request, response) {
