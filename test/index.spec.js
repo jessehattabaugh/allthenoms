@@ -2,7 +2,7 @@
  * @file Homepage accessibility and SEO test
  * @module tests/index
  */
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test.describe('Homepage 🏠', () => {
 	// Shared emoji for this test file domain
@@ -24,7 +24,7 @@ test.describe('Homepage 🏠', () => {
 			// Security headers
 			const viewport = await page.getAttribute('meta[name="viewport"]', 'content');
 			expect(viewport).toBe('width=device-width, initial-scale=1');
-			
+
 			const colorScheme = await page.getAttribute('meta[name="color-scheme"]', 'content');
 			expect(colorScheme).toBe('dark light');
 

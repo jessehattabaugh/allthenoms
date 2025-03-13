@@ -6,4 +6,5 @@ node_modules
 .last-run.json
 
 # don't commit local screenshots
-**/*.tmp.*
+test-results
+-*.baseline.*.png
