@@ -1,7 +1,22 @@
 /**
  * @file Homepage-specific styles
- * 🏠 Styles specific to the homepage layout and components
+ * 🍔 Styles specific to the ALL THE NOMS! homepage layout and components
  */
+
+/* Custom properties for food theme */
+:root {
+	--color-primary: #ff6b35; /* Vibrant orange for CTAs */
+	--color-secondary: #7dcfb6; /* Teal for secondary elements */
+	--color-accent: #fbd1a2; /* Soft peach for accents */
+	--color-text: #33272a; /* Dark brown for text */
+	--color-text-light: #594a4e; /* Lighter brown for secondary text */
+	--color-background: #ffffff; /* White background */
+	--color-background-alt: #f9f9f7; /* Off-white for card backgrounds */
+	--color-border: #e0e0e0; /* Light gray for borders */
+	--color-success: #79b473; /* Green for success messages */
+	--color-warning: #ffc857; /* Yellow for warnings */
+	--color-error: #e5323b; /* Red for errors */
+}
 
 /* Hero Section */
 .hero {
@@ -26,7 +41,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/images/hero-background.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/images/food-collage.jpg');
 	background-size: cover;
 	background-position: center;
 	z-index: -1;
@@ -39,7 +54,7 @@
 }
 
 .hero h1 {
-	font-size: 3rem;
+	font-size: 3.5rem;
 	margin-bottom: var(--space-4);
 	color: white;
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -68,23 +83,33 @@
 }
 
 .cta-button:hover {
-	background-color: var(--color-primary-dark);
+	background-color: #e45a2a; /* Darker orange */
 	transform: translateY(-2px);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	text-decoration: none;
 }
 
-/* Features Section */
-.features {
+/* How It Works Section */
+.how-it-works {
+	margin-bottom: var(--space-16);
+	text-align: center;
+}
+
+.how-it-works h2 {
+	font-size: 2.5rem;
+	margin-bottom: var(--space-8);
+	color: var(--color-text);
+}
+
+.steps {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: var(--space-8);
-	margin-bottom: var(--space-16);
 }
 
-.feature-card {
+.step-card {
 	padding: var(--space-6);
-	background-color: var(--color-surface);
+	background-color: var(--color-background-alt);
 	border-radius: var(--border-radius-lg);
 	box-shadow: var(--shadow-sm);
 	transition: transform var(--transition-normal) ease,
@@ -95,47 +120,166 @@
 	align-items: center;
 }
 
-.feature-card:hover {
+.step-card:hover {
 	transform: translateY(-5px);
 	box-shadow: var(--shadow-md);
 }
 
-.feature-icon {
-	font-size: 3rem;
+.step-number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: var(--color-primary);
+	color: white;
+	font-size: 1.5rem;
+	font-weight: bold;
 	margin-bottom: var(--space-4);
-	color: var(--color-primary);
 }
 
-.feature-card h2 {
+.step-card h3 {
 	margin-bottom: var(--space-3);
 	font-size: 1.5rem;
+	color: var(--color-text);
 }
 
-.feature-card p {
-	color: var(--color-text-secondary);
+.step-card p {
+	color: var(--color-text-light);
 	line-height: 1.6;
+}
+
+/* Featured Dishes Section */
+.featured-dishes {
+	margin-bottom: var(--space-16);
+}
+
+.featured-dishes h2 {
+	text-align: center;
+	margin-bottom: var(--space-8);
+	font-size: 2.5rem;
+	color: var(--color-text);
+}
+
+.dish-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: var(--space-6);
+}
+
+.dish-card {
+	border-radius: var(--border-radius-lg);
+	overflow: hidden;
+	box-shadow: var(--shadow-sm);
+	transition: transform var(--transition-normal) ease,
+				box-shadow var(--transition-normal) ease;
+	background-color: var(--color-background);
+	display: flex;
+	flex-direction: column;
+}
+
+.dish-card:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--shadow-md);
+}
+
+.dish-image {
+	height: 180px;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.dish-category {
+	position: absolute;
+	top: var(--space-3);
+	right: var(--space-3);
+	background-color: var(--color-secondary);
+	color: white;
+	padding: var(--space-1) var(--space-3);
+	border-radius: var(--border-radius-pill);
+	font-size: 0.875rem;
+	font-weight: var(--font-weight-medium);
+}
+
+.dish-content {
+	padding: var(--space-4);
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.dish-name {
+	font-size: 1.25rem;
+	margin-bottom: var(--space-2);
+	color: var(--color-text);
+}
+
+.dish-restaurant {
+	font-size: 0.875rem;
+	color: var(--color-text-light);
+	margin-bottom: var(--space-2);
+}
+
+.dish-rating {
+	display: flex;
+	align-items: center;
+	margin-bottom: var(--space-2);
+}
+
+.dish-rating-stars {
+	color: var(--color-warning);
+	margin-right: var(--space-2);
+}
+
+.dish-rating-count {
+	font-size: 0.875rem;
+	color: var(--color-text-light);
+}
+
+.dish-footer {
+	padding: var(--space-3) var(--space-4);
+	border-top: 1px solid var(--color-border);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dish-info {
+	display: flex;
+	align-items: center;
+	font-size: 0.875rem;
+	color: var(--color-text-light);
+}
+
+.dish-info svg {
+	margin-right: var(--space-1);
 }
 
 /* Testimonials Section */
 .testimonials-section {
 	padding: var(--space-8) 0;
-	background-color: var(--color-surface);
+	background-color: var(--color-secondary);
 	border-radius: var(--border-radius-lg);
 	margin-bottom: var(--space-16);
+	color: white;
 }
 
 .testimonials-section h2 {
 	text-align: center;
 	margin-bottom: var(--space-8);
+	color: white;
 }
 
 .testimonial {
-	background-color: var(--color-background);
+	background-color: rgba(255, 255, 255, 0.9);
 	padding: var(--space-6);
 	border-radius: var(--border-radius-md);
 	box-shadow: var(--shadow-sm);
 	margin: 0 auto;
 	max-width: 800px;
+	color: var(--color-text);
 }
 
 .testimonial p {
@@ -147,39 +291,24 @@
 
 .testimonial-author {
 	text-align: right;
-	color: var(--color-text-secondary);
+	color: var(--color-text-light);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
 
-/* Banner Component */
-.banner {
-	background-color: var(--color-accent);
-	color: white;
-	padding: var(--space-3) var(--space-4);
-	text-align: center;
-	position: relative;
-	margin-bottom: var(--space-8);
-	border-radius: var(--border-radius-md);
-}
-
-.banner p {
-	margin: 0;
-}
-
-.banner-close {
-	position: absolute;
-	right: var(--space-4);
-	top: 50%;
-	transform: translateY(-50%);
-	background: transparent;
-	border: none;
-	color: white;
-	cursor: pointer;
-	font-size: 1.25rem;
+.author-avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-right: var(--space-3);
+	background-size: cover;
+	background-position: center;
 }
 
 /* Newsletter Signup */
 .newsletter {
-	background-color: var(--color-surface);
+	background-color: var(--color-accent);
 	padding: var(--space-8);
 	border-radius: var(--border-radius-lg);
 	margin-bottom: var(--space-16);
@@ -188,6 +317,7 @@
 
 .newsletter h2 {
 	margin-bottom: var(--space-4);
+	color: var(--color-text);
 }
 
 .newsletter p {
@@ -195,7 +325,7 @@
 	max-width: 600px;
 	margin-left: auto;
 	margin-right: auto;
-	color: var(--color-text-secondary);
+	color: var(--color-text);
 }
 
 .newsletter-form {
@@ -219,7 +349,7 @@
 	}
 
 	.hero h1 {
-		font-size: 2.25rem;
+		font-size: 2.5rem;
 	}
 
 	.hero p {
@@ -230,7 +360,11 @@
 		flex-direction: column;
 	}
 
-	.features {
+	.steps {
 		grid-template-columns: 1fr;
+	}
+
+	.dish-grid {
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	}
 }

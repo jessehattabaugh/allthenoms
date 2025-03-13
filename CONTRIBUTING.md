@@ -1,45 +1,18 @@
-# 🚀 Contributing Guide
-
-<!--
-INSTRUCTIONS: This is a template for your project's contributing guidelines.
-Replace the project name "Project Name" throughout this document with your actual project name.
-Delete these instructions and add specific details about your project where indicated.
-
-IMPORTANT: Include this file as context when using GitHub Copilot for implementing tests,
-as it contains crucial test guidelines and technical developer information.
--->
+# 🚀 Contributing to ALL THE NOMS!
 
 ## 📝 Project Overview
 
-**Project Name** is a web application that
-
-<!--
-INSTRUCTIONS: Replace this section with a brief description of your project.
-Include information about:
-1. The project's purpose and core functionality
-2. Key technologies used
-3. The overall vision
--->
+**ALL THE NOMS!** is a foodie social network built around users' favorite dishes. Our platform allows food enthusiasts to track where they've had their favorite dishes, rank them, share photos and reviews, and connect with other foodies who share similar taste preferences. The app guides users through discovering new versions of their favorite foods while gamifying the experience of collecting and reviewing dishes.
 
 ### 🧠 Core Principles
 
-<!--
-INSTRUCTIONS: Replace these principles with your project's core values.
-Examples:
--->
-
--   **User Experience**: Creating intuitive and accessible interfaces
--   **Performance**: Ensuring fast load times and smooth interactions
--   **Modularity**: Building components that are reusable and maintainable
--   **Testing**: Thoroughly testing all features before deployment
--   **Documentation**: Providing clear and comprehensive documentation
+-   **User Experience**: Creating an intuitive and delightful interface for food enthusiasts
+-   **Performance**: Ensuring fast load times even with image-heavy content
+-   **Modularity**: Building reusable components for different food categories and review systems
+-   **Testing**: Thoroughly testing all features with real-world foodie scenarios
+-   **Documentation**: Providing clear guidelines for contributors to enhance the platform
 
 ## 📐 Project Structure
-
-<!--
-INSTRUCTIONS: Replace this section with your project's structure.
-Include information about key directories, components, etc.
--->
 
 ### Full Directory Structure
 
@@ -51,9 +24,16 @@ Include information about key directories, components, etc.
 │   │   ├── site-footer.js
 │   │   ├── site-header.css
 │   │   ├── site-header.js
+│   │   ├── dish-card.css    # New component
+│   │   ├── dish-card.js     # New component
+│   │   ├── review-form.css  # New component
+│   │   ├── review-form.js   # New component
 │   ├── scripts/      # JavaScript files
 │   │   ├── async.js
-│   │   └── index.js
+│   │   ├── index.js
+│   │   ├── dishes.js        # New script
+│   │   ├── reviews.js       # New script
+│   │   └── recommendations.js # New script
 │   ├── styles/       # CSS files
 │   │   ├── all.css
 │   │   ├── light.css
@@ -64,50 +44,54 @@ Include information about key directories, components, etc.
 │       └── 512.png
 ├── test/             # Test files
 │   └── index.spec.js
+│   └── dish-collection.spec.js # New test
 ├── bin/              # Build scripts and utilities
 ├── netlify/          # Netlify configuration
 │   └── functions/    # Serverless functions
+│       ├── auth.js           # Authentication functions
+│       ├── restaurants.js    # Restaurant API functions
+│       └── recommendations.js # Recommendation engine
 ```
 
 ### Frontend Architecture
 
--   **Component Structure**: [Describe your component architecture]
--   **State Management**: [Describe your state management approach]
--   **Routing**: [Describe your routing system]
+-   **Component Structure**: Web Components for dish cards, review forms, and restaurant listings
+-   **State Management**: Context-based state for user preferences and dish collections
+-   **Routing**: Client-side routing for dish collections, restaurant pages, and user profiles
 
 ## 🛠️ Tech Stack
 
--   **Frontend**: HTML/CSS/JavaScript with [framework/library]
--   **State Management**: [Your state management solution]
--   **Storage**: [Your storage solution]
--   **Testing**: Playwright for end-to-end testing
+-   **Frontend**: HTML/CSS/JavaScript with Web Components
+-   **State Management**: Custom state management with localStorage persistence
+-   **Storage**: Netlify Functions + FaunaDB for dish and restaurant data
+-   **Testing**: Playwright for end-to-end testing of foodie user journeys
 
 ## 🏗️ Technical Architecture
 
 ### Key Principles
 
 -   **Module System**: ES modules for direct imports
--   **Web Components**: Custom elements for modular UI components
--   **Progressive Enhancement**: Features that work without JavaScript when possible
--   **Offline-First**: Core functionality available offline
--   **Test-Driven Development**: Red/green testing approach for all new features
+-   **Web Components**: Custom elements for modular UI components like dish cards and review forms
+-   **Progressive Enhancement**: Core dish browsing functionality works without JavaScript
+-   **Offline-First**: Save dish reviews offline when connectivity is unavailable
+-   **Test-Driven Development**: Red/green testing approach for all new foodie features
 
 ## 📝 Code Style Guidelines
 
 ### General Guidelines
 
 -   **Indentation:** Use tabs for indentation, not spaces
--   **File Organization:** Group related functionality together
--   **Component Structure:** Each component should serve a singular purpose
+-   **File Organization:** Group related functionality by dish types and review components
+-   **Component Structure:** Each component should serve a singular purpose (e.g., dish display, review form)
 
 ### Naming Conventions
 
--   **Files:** Use kebab-case for filenames (`component-name.js`, not `componentName.js`)
--   **Components:** Use PascalCase for component names (`ComponentName`, not `componentName`)
--   **Functions:** Use camelCase for function names (`handleEvent`, not `handle_event`)
--   **CSS Classes:** Use kebab-case for CSS classes (`.component-wrapper`, not `.componentWrapper`)
--   **Constants:** Use UPPER_SNAKE_CASE for constants (`MAXIMUM_ITEMS`, not `maximumItems`)
--   **Test Files:** Use the same naming as the page they test with `.spec.js` suffix (`page-name.spec.js`)
+-   **Files:** Use kebab-case for filenames (`dish-card.js`, not `dishCard.js`)
+-   **Components:** Use PascalCase for component names (`DishCard`, not `dishCard`)
+-   **Functions:** Use camelCase for function names (`submitReview`, not `submit_review`)
+-   **CSS Classes:** Use kebab-case for CSS classes (`.dish-card-wrapper`, not `.dishCardWrapper`)
+-   **Constants:** Use UPPER_SNAKE_CASE for constants (`MAXIMUM_REVIEW_LENGTH`, not `maximumReviewLength`)
+-   **Test Files:** Use the same naming as the page they test with `.spec.js` suffix (`dish-collection.spec.js`)
 
 ### JavaScript Guidelines
 
@@ -119,17 +103,17 @@ Include information about key directories, components, etc.
 ### CSS Guidelines
 
 -   **Selectors:** Use simple, shallow selectors to target elements efficiently
--   **Variables:** Define CSS custom properties at the :root level for consistent theming
+-   **Variables:** Define CSS custom properties at the :root level for consistent food-themed colors
 -   **Nesting:** Avoid deeply nested CSS rules for better performance
 
 ### Console Logging
 
 -   Use two emojis per console message—one representing the file's domain, one for the specific message
 -   Suggested emoji domains:
-    -   ⚙️ UI interactions
-    -   🔧 Form handling
-    -   🔍 Search functionality
-    -   📊 Data management
+    -   🍔 Dish-related functionality
+    -   🌮 Review system
+    -   🍕 Restaurant listings
+    -   🗺️ Map and location features
     -   🧪 Testing infrastructure
 -   Console methods:
     -   `console.debug()`: Minor information, loop iterations, internal workings
@@ -144,17 +128,17 @@ Include information about key directories, components, etc.
 
 ```css
 :root {
-	--color-primary: #3498db;
-	--color-secondary: #2ecc71;
-	--color-accent: #e74c3c;
-	--color-text: #333333;
-	--color-text-light: #777777;
-	--color-background: #ffffff;
-	--color-background-alt: #f8f8f8;
-	--color-border: #dddddd;
-	--color-success: #2ecc71;
-	--color-warning: #f39c12;
-	--color-error: #e74c3c;
+	--color-primary: #ff6b35; /* Vibrant orange for CTAs */
+	--color-secondary: #7dcfb6; /* Teal for secondary elements */
+	--color-accent: #fbd1a2; /* Soft peach for accents */
+	--color-text: #33272a; /* Dark brown for text */
+	--color-text-light: #594a4e; /* Lighter brown for secondary text */
+	--color-background: #ffffff; /* White background */
+	--color-background-alt: #f9f9f7; /* Off-white for card backgrounds */
+	--color-border: #e0e0e0; /* Light gray for borders */
+	--color-success: #79b473; /* Green for success messages */
+	--color-warning: #ffc857; /* Yellow for warnings */
+	--color-error: #e5323b; /* Red for errors */
 	--shadow-default: 0 2px 5px rgba(0, 0, 0, 0.1);
 	--shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -162,9 +146,9 @@ Include information about key directories, components, etc.
 
 ### Typography
 
--   **Headings:** [Your heading font] (fallback: sans-serif)
--   **Body Text:** [Your body font] (system-ui, sans-serif)
--   **Monospace:** [Your monospace font] (monospace fallback)
+-   **Headings:** 'Montserrat', sans-serif (fallback: sans-serif)
+-   **Body Text:** 'Open Sans', system-ui, sans-serif
+-   **Monospace:** 'Fira Code', monospace
 -   **Font Sizes:** Use relative units (rem) with a base size of 16px
 -   **Line Heights:** 1.5 for body text, 1.2 for headings
 
@@ -173,57 +157,72 @@ Include information about key directories, components, etc.
 > **IMPORTANT:** When creating tests with GitHub Copilot, include this file as context to ensure adherence to these guidelines.
 
 -   **End-to-End Focus:** Tests must interact with actual HTML pages through the user interface
--   **User-Centric:** Focus on what real users would see and interact with
+-   **User-Centric:** Focus on what real foodie users would see and interact with
 -   **No Mocks:** Avoid mock objects, unit tests, or test fixtures
 -   **Browser Compatibility:** Ensure tests run on all modern browsers
 
 ### Test Structure
 
 -   **Test Files:** Correspond to actual pages in the `/www` directory
--   **Test Naming:** Use descriptive names that reflect the user journey or interaction being tested
+-   **Test Naming:** Use descriptive names that reflect the foodie journey or interaction being tested
 -   **URL Format:** Use relative URLs without the `/www/` prefix in test navigation (e.g., `/index.html` not `/www/index.html`)
 
 ### Test-Driven Development Process
 
 -   **Red Tests First:** Always begin with a failing test that defines expected functionality
 -   **Green Implementation:** Then implement just enough code to make the test pass
--   **User-Focused Testing:** Tests should reflect actual user interactions and experiences
+-   **User-Focused Testing:** Tests should reflect actual foodie interactions and experiences
 -   **Accessibility Testing:** Ensure all tests interact with the page in ways that support screen readers
 -   **Test Organization:** Group related tests in logical describe blocks
 -   **Test Naming:** Tests should clearly describe the expected behavior being verified
 
 ## 🚀 Example Test
 
-This example demonstrates how to test a page load with Playwright:
+This example demonstrates how to test the dish collection feature with Playwright:
 
 ```javascript
 /**
- * @file Page load test example
- * @module tests/page-load
+ * @file Dish collection test example
+ * @module tests/dish-collection
  */
 import { test, expect } from '@playwright/test';
 
-test.describe('Page Load Test ⚙️', () => {
+test.describe('Dish Collection Feature 🍔', () => {
 	// Shared emoji for this file domain
-	const fileEmoji = '⚙️';
+	const fileEmoji = '🍔';
 
-	test('should display the correct title and elements', async ({ page }) => {
-		// Navigate to the page
-		await page.goto('/index.html');
+	test('should allow users to add a new dish to their collection', async ({ page }) => {
+		// Navigate to the user's collection page
+		await page.goto('/my-collection.html');
 
-		// Check the page title
-		await expect(page).toHaveTitle('Project Name');
+		// Verify we're on the right page
+		await expect(page).toHaveTitle('My Dish Collection | ALL THE NOMS!');
 
-		// Check for the presence of a key element
-		const mainHeading = page.locator('h1');
-		await expect(mainHeading).toBeVisible();
+		// Check for the add dish button
+		const addDishButton = page.locator('[role="button"][aria-label="Add new dish"]');
+		await expect(addDishButton).toBeVisible();
 
-		// Check accessibility elements
-		const mainContent = page.locator('[role="main"]');
-		await expect(mainContent).toBeVisible();
+		// Click the add button
+		await addDishButton.click();
+
+		// Verify the add dish form appears
+		const dishForm = page.locator('[role="form"][aria-labelledby="add-dish-heading"]');
+		await expect(dishForm).toBeVisible();
+
+		// Fill out the form
+		await page.fill('#dish-name', 'Spicy Ramen');
+		await page.fill('#restaurant-name', 'Noodle House');
+		await page.selectOption('#rating', '5');
+
+		// Submit the form
+		await page.click('[type="submit"]');
+
+		// Verify the new dish appears in the collection
+		const newDish = page.locator('[role="listitem"]:has-text("Spicy Ramen")');
+		await expect(newDish).toBeVisible();
 
 		// Log the successful test
-		console.info(`${fileEmoji} ✅ Page loaded successfully.`);
+		console.info(`${fileEmoji} ✅ Dish successfully added to collection.`);
 	});
 });
 ```
@@ -234,10 +233,10 @@ test.describe('Page Load Test ⚙️', () => {
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/project-name.git
+git clone https://github.com/username/allthenoms.git
 
 # Navigate to the project directory
-cd project-name
+cd allthenoms
 
 # Install dependencies
 npm install
@@ -260,21 +259,15 @@ npm run build
 
 -   [README.md](README.md) - Project overview and roadmap
 -   [CHANGELOG.md](CHANGELOG.md) - Update history
-
-<!--
-INSTRUCTIONS: Add any additional documentation links that are relevant to your project.
-For example:
-- API Documentation
-- Style Guide
-- Deployment Guide
--->
+-   [DISH_TAXONOMY.md](DISH_TAXONOMY.md) - Food categorization system
+-   [API_DOCS.md](API_DOCS.md) - API documentation for restaurant data
 
 ## 🔄 Contribution Process
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/new-dish-filter`)
+3. Commit your changes (`git commit -m 'Add new dish filtering by spice level'`)
+4. Push to the branch (`git push origin feature/new-dish-filter`)
 5. Open a Pull Request
 
 ### Pull Request Process
@@ -283,7 +276,3 @@ For example:
 2. Update documentation as needed
 3. Get approval from at least one reviewer
 4. Merge once approved
-
-<!--
-INSTRUCTIONS: Add any specific requirements for your project's contribution process.
--->

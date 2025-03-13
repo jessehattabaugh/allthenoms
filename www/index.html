@@ -4,12 +4,12 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="A modern web boilerplate with cutting-edge features" data-site-description>
-	<meta name="theme-color" content="#000000">
+	<meta name="description" content="ALL THE NOMS! - Track, rate, and share your favorite dishes across restaurants" data-site-description>
+	<meta name="theme-color" content="#ff6b35">
 	<meta name="color-scheme" content="dark light">
 	<meta name="view-transition" content="same-origin">
 
-	<title>Modern Web Boilerplate</title>
+	<title>ALL THE NOMS! - Your Favorite Dishes, All in One Place</title>
 	<link rel="manifest" href="/manifest.json">
 	<link rel="icon" href="/favicon.ico">
 
@@ -30,8 +30,9 @@
 	<site-header>
 		<ul>
 			<li><a href="/index.html" aria-current="page">Home</a></li>
+			<li><a href="/dishes.html">My Collection</a></li>
+			<li><a href="/discover.html">Discover</a></li>
 			<li><a href="/about.html">About</a></li>
-			<li><a href="/contact.html">Contact</a></li>
 		</ul>
 		<theme-toggle></theme-toggle>
 	</site-header>
@@ -40,55 +41,175 @@
 		<section class="hero">
 			<div class="hero-overlay"></div>
 			<div class="hero-content">
-				<h1>Modern Web Boilerplate</h1>
-				<p>A lightweight, accessible, and modern starting point for web projects</p>
-				<a href="/about.html" class="cta-button">Learn More</a>
+				<h1>ALL THE NOMS!</h1>
+				<p>The foodie social network built around your favorite dishes. Track, rate, and share your culinary adventures!</p>
+				<a href="/signup.html" class="cta-button">Start Your Collection</a>
 			</div>
 		</section>
 
-		<section class="features">
-			<article class="feature-card">
-				<h2>Modern JavaScript</h2>
-				<p>ES Modules, Web Components, and clean code patterns for maintainable projects</p>
-			</article>
+		<section class="how-it-works">
+			<h2>How It Works</h2>
+			<div class="steps">
+				<article class="step-card">
+					<div class="step-number">1</div>
+					<h3>Choose Your Dish</h3>
+					<p>Tell us your favorite dish - the one you order everywhere you go.</p>
+				</article>
 
-			<article class="feature-card">
-				<h2>Accessibility First</h2>
-				<p>WCAG-compliant markup, keyboard navigation, and screen reader support built-in</p>
-			</article>
+				<article class="step-card">
+					<div class="step-number">2</div>
+					<h3>Build Your Collection</h3>
+					<p>Add restaurants where you've tried your favorite dish and rank them all.</p>
+				</article>
 
-			<article class="feature-card">
-				<h2>Performance Focused</h2>
-				<p>Optimized for Core Web Vitals and fast loading on all devices</p>
-			</article>
+				<article class="step-card">
+					<div class="step-number">3</div>
+					<h3>Discover & Share</h3>
+					<p>Find new places to try and connect with foodies who share your taste.</p>
+				</article>
+			</div>
 		</section>
 
-		<section aria-labelledby="testimonials-heading">
-			<h2 id="testimonials-heading">What People Say</h2>
+		<section class="featured-dishes" aria-labelledby="featured-heading">
+			<h2 id="featured-heading">Popular Dish Collections</h2>
+			<div class="dish-grid">
+				<article class="dish-card">
+					<div class="dish-image" style="background-image: url('/images/burgers.jpg')">
+						<span class="dish-category">Burgers</span>
+					</div>
+					<div class="dish-content">
+						<h3 class="dish-name">Smash Burgers</h3>
+						<p class="dish-restaurant">Most collected at: Shake Shack</p>
+						<div class="dish-rating">
+							<div class="dish-rating-stars">★★★★★</div>
+							<span class="dish-rating-count">243 reviews</span>
+						</div>
+					</div>
+					<div class="dish-footer">
+						<span class="dish-info">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+								<path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+								<path d="M8 4C6.9 4 6 4.9 6 6s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+							</svg>
+							147 locations
+						</span>
+					</div>
+				</article>
+
+				<article class="dish-card">
+					<div class="dish-image" style="background-image: url('/images/ramen.jpg')">
+						<span class="dish-category">Noodles</span>
+					</div>
+					<div class="dish-content">
+						<h3 class="dish-name">Tonkotsu Ramen</h3>
+						<p class="dish-restaurant">Most collected at: Ichiran</p>
+						<div class="dish-rating">
+							<div class="dish-rating-stars">★★★★☆</div>
+							<span class="dish-rating-count">187 reviews</span>
+						</div>
+					</div>
+					<div class="dish-footer">
+						<span class="dish-info">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+								<path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+								<path d="M8 4C6.9 4 6 4.9 6 6s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+							</svg>
+							92 locations
+						</span>
+					</div>
+				</article>
+
+				<article class="dish-card">
+					<div class="dish-image" style="background-image: url('/images/pizza.jpg')">
+						<span class="dish-category">Pizza</span>
+					</div>
+					<div class="dish-content">
+						<h3 class="dish-name">Neapolitan Pizza</h3>
+						<p class="dish-restaurant">Most collected at: Roberta's</p>
+						<div class="dish-rating">
+							<div class="dish-rating-stars">★★★★★</div>
+							<span class="dish-rating-count">324 reviews</span>
+						</div>
+					</div>
+					<div class="dish-footer">
+						<span class="dish-info">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+								<path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+								<path d="M8 4C6.9 4 6 4.9 6 6s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+							</svg>
+							213 locations
+						</span>
+					</div>
+				</article>
+
+				<article class="dish-card">
+					<div class="dish-image" style="background-image: url('/images/tacos.jpg')">
+						<span class="dish-category">Tacos</span>
+					</div>
+					<div class="dish-content">
+						<h3 class="dish-name">Al Pastor Tacos</h3>
+						<p class="dish-restaurant">Most collected at: La Taqueria</p>
+						<div class="dish-rating">
+							<div class="dish-rating-stars">★★★★☆</div>
+							<span class="dish-rating-count">276 reviews</span>
+						</div>
+					</div>
+					<div class="dish-footer">
+						<span class="dish-info">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+								<path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+								<path d="M8 4C6.9 4 6 4.9 6 6s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+							</svg>
+							168 locations
+						</span>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="testimonials-section" aria-labelledby="testimonials-heading">
+			<h2 id="testimonials-heading">What Our Foodies Say</h2>
 			<image-carousel auto-play interval="5000" aria-label="Testimonials carousel">
 				<carousel-item>
 					<blockquote class="testimonial">
-						<p>This boilerplate saved me hours of setup time. Highly recommended!</p>
+						<p>ALL THE NOMS! helped me discover the best burger joint in town that I'd never heard of before. The recommendations are spot on!</p>
 						<footer class="testimonial-author">
-							<cite>Alex Chen, Web Developer</cite>
+							<cite>Alex Chen, Burger Enthusiast</cite>
 						</footer>
 					</blockquote>
 				</carousel-item>
 				<carousel-item>
 					<blockquote class="testimonial">
-						<p>The accessibility features are top-notch and helped me build an inclusive web app.</p>
+						<p>I love being able to rank all the places I've had ramen. Now when friends ask where to go, I can show them my collection with ratings!</p>
 						<footer class="testimonial-author">
-							<cite>Jordan Taylor, UX Designer</cite>
+							<cite>Jordan Taylor, Ramen Collector</cite>
+						</footer>
+					</blockquote>
+				</carousel-item>
+				<carousel-item>
+					<blockquote class="testimonial">
+						<p>As someone who tries pizza everywhere I go, this app is a game-changer. I've unlocked my second dish and now I'm tracking tacos too!</p>
+						<footer class="testimonial-author">
+							<cite>Morgan Smith, Pizza & Taco Explorer</cite>
 						</footer>
 					</blockquote>
 				</carousel-item>
 			</image-carousel>
 		</section>
+
+		<section class="newsletter">
+			<h2>Stay Updated</h2>
+			<p>Join our foodie community and get notified about new features, trending dishes, and local restaurant updates.</p>
+			<form class="newsletter-form">
+				<input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address">
+				<button type="submit" class="cta-button">Subscribe</button>
+			</form>
+		</section>
 	</main>
 
 	<site-footer>
-		<p>Built with <span aria-hidden="true">❤️</span><span class="sr-only">love</span> and modern web standards</p>
-		<p>&copy; <span id="current-year">2023</span> Modern Web Boilerplate</p>
+		<p>Built with <span aria-hidden="true">❤️</span><span class="sr-only">love</span> for foodies everywhere</p>
+		<p>&copy; <span id="current-year">2023</span> ALL THE NOMS!</p>
 	</site-footer>
 </body>
 
