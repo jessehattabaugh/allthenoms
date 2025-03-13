@@ -1,0 +1,98 @@
+/* styles for wide screens */
+body {
+	max-width: 60em;
+	margin: auto;
+	padding: 2em;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--space-6) 0;
+}
+
+nav ul {
+	display: flex;
+	gap: var(--space-6);
+}
+
+main {
+	padding: var(--space-8) 0;
+}
+
+/* Use CSS grid for complex layouts on wider screens */
+.grid-layout {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 2rem;
+}
+
+/* Container query example */
+@container main-content (min-width: 40em) {
+	.container-responsive {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 2rem;
+	}
+}
+
+/* Apply hover effects only on devices that support hover */
+@media (hover: hover) {
+	a:hover {
+		text-decoration: underline;
+		color: var(--color-secondary);
+	}
+
+	button:hover {
+		filter: brightness(1.1);
+	}
+}
+
+/**
+ * Wide Screen Styles
+ * 🖥️ Styles for wider viewports (tablets and desktops)
+ */
+
+/* Typography adjustments for wide screens */
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2.25rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
+/* Container adjustments */
+.container {
+	padding-left: var(--space-8);
+	padding-right: var(--space-8);
+}
+
+/* Layout enhancements for wide screens */
+.wide-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: var(--space-6);
+}
+
+.two-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space-8);
+}
+
+.three-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: var(--space-6);
+}
+
+/* Footer layout for wide screens */
+footer {
+	padding: var(--space-8) 0;
+}

@@ -1,2 +1,9 @@
 node_modules
-.DS_Store
+.netlify
+
+# test logs
+/test-results
+/playwright-report
+
+# don't commit local screenshots
+**/*.tmp.*
