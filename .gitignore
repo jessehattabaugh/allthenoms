@@ -2,8 +2,8 @@ node_modules
 .netlify
 
 # test logs
-/test-results
 /playwright-report
+.last-run.json
 
 # don't commit local screenshots
 **/*.tmp.*

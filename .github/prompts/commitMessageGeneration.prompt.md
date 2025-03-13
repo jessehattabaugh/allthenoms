@@ -1,0 +1,1 @@
+Write a concise Git commit message in imperative mood summarizing the following diff. Use industry best practices: start with a short summary (50 chars max), optionally followed by a blank line and a brief description providing additional context or rationale. Reference issue numbers if present.

@@ -20,13 +20,6 @@ export default defineConfig({
 	timeout: 30 * 1000,
 	expect: {
 		timeout: 5000,
-		// Configure screenshot comparison
-		toHaveScreenshot: {
-			maxDiffPixelRatio: 0.05,
-			// Use a naming convention that includes "tmp" for new snapshots
-			// These will be ignored by git until accepted as baselines
-			snapshotPathTemplate: '{snapshotDir}/{arg}.tmp{ext}',
-		},
 	},
 	fullyParallel: true,
 	forbidOnly: !!process.env.CI,

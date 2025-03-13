@@ -6,27 +6,33 @@
 	"editor.formatOnSave": true,
 	"github.copilot.chat.codeGeneration.instructions": [
 		{
-			"file": "CONTRIBUTING.md"
+			"file": ".github/prompts/codeGeneration.prompt.md"
 		}
 	],
 	"github.copilot.chat.testGeneration.instructions": [
 		{
-			"file": "CONTRIBUTING.md"
+			"file": ".github/prompts/testGeneration.prompt.md"
 		}
 	],
 	"github.copilot.chat.reviewSelection.instructions": [
 		{
-			"file": "CONTRIBUTING.md"
+			"file": ".github/prompts/reviewSelection.prompt.md"
+		}
+	],
+	"github.copilot.chat.commitMessageGeneration.instructions": [
+		{
+			"file": ".github/prompts/commitMessageGeneration.prompt.md"
+		}
+	],
+	"github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+		{
+			"file": ".github/prompts/pullRequestDescriptionGeneration.prompt.md"
 		}
 	],
 	"github.copilot.chat.reviewSelection.enabled": true,
 	"github.copilot.chat.codeGeneration.useInstructionFiles": true,
 	"github.copilot.chat.codesearch.enabled": true,
-	"github.copilot.chat.commitMessageGeneration.instructions": [
-		{
-			"file": "CONTRIBUTING.md"
-		}
-	],
+
 	"github.copilot.advanced": {
 		"commitMessageGeneration": {
 			"enabled": true
